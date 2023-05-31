@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "590736670484",
+    "project_id": "taletale-a9e9a",
+    "storage_bucket": "taletale-a9e9a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:590736670484:android:e081a4275118536b020c01",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtLwO7l-3DJCbEIGe39l9uEPrFDoAfhmE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
