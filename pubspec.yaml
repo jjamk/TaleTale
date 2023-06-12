@@ -40,6 +40,10 @@ dependencies:
   get: ^4.6.5
   firebase_auth: ^4.6.2
   permission_handler: ^10.2.0
+  http: ^0.13.6
+  cloud_firestore: ^4.8.0
+  omni_datetime_picker: ^1.0.7
+  flutter_localization: ^0.1.12
 
 dev_dependencies:
   flutter_test:

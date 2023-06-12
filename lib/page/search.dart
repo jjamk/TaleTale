@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'home.dart';
 import 'repository.dart';
 import 'app.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
+import '../firebase_options.dart';
+import 'package:omni_datetime_picker/omni_datetime_picker.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 
 class Search extends StatefulWidget {
   Search({Key? key, required this.selected}) : super(key: key);
@@ -13,6 +18,8 @@ class Search extends StatefulWidget {
 }
 
 class _SearchState extends State<Search> {
+  DateTime dateTime = DateTime.now();
+
   PreferredSizeWidget _appbarWidget() {
     return AppBar(
       backgroundColor: Color.fromARGB(255, 138, 43, 43),
@@ -142,34 +149,76 @@ class _SearchState extends State<Search> {
             color: Colors.grey),
         _listWidget(),
         ElevatedButton(
-          onPressed: () {
-            showDialog(
-                context: context,
-                barrierDismissible: false,
-                builder: (BuildContext context) {
-                  return AlertDialog(
-                      content: Text("타고싶은 시간 입력"),
-                      insetPadding: const EdgeInsets.all(30),
-                      actions: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.of(context).pop();
-                            },
-                            child: Text("같이 탈래 신청하기")),
-                        TextButton(
-                            onPressed: () {
-                              Navigator.of(context).pop();
-                            },
-                            child: Text("취소")),
-                      ]);
-                });
-          },
-          child: const Text("타고 싶은 시간이 없다면?"),
+          //child: const Text("타고 싶은 시간이 없다면?"),
           style: ElevatedButton.styleFrom(
               backgroundColor: Color.fromARGB(255, 138, 43, 43)),
+          onPressed: () async {
+            final selectedDate = await showOmniDateTimePicker(
+              initialDate: DateTime.now(),
+              firstDate: DateTime.now(),
+              lastDate: DateTime.utc(2023, 7, 31),
+              is24HourMode: false,
+              isShowSeconds: false,
+              minutesInterval: 15,
+              secondsInterval: 1,
+              borderRadius: const BorderRadius.all(Radius.circular(16)),
+              constraints: const BoxConstraints(
+                maxWidth: 350,
+                maxHeight: 650,
+              ),
+              transitionBuilder: (context, anim1, anim2, child) {
+                return FadeTransition(
+                  opacity: anim1.drive(
+                    Tween(
+                      begin: 0,
+                      end: 1,
+                    ),
+                  ),
+                  child: child,
+                );
+              },
+              transitionDuration: const Duration(milliseconds: 200),
+              barrierDismissible: true,
+              context: context,
+            );
+
+            if (selectedDate != null) {
+              setState(() {
+                dateTime = selectedDate;
+                CollectionReference collRef =
+                    FirebaseFirestore.instance.collection('dday');
+                collRef.add({
+                  'day': dateTime.toString(),
+                });
+              });
+            }
+          },
+          child: Text(
+              "${dateTime.year.toString()}-${dateTime.month.toString().padLeft(2, '0')}-${dateTime.day.toString().padLeft(2, '0')}  ${dateTime.hour.toString().padLeft(2, '0')}:${dateTime.minute.toString().padLeft(2, '0')}"),
         ),
       ]),
     );
+
+    // // showDialog(
+    //     context: context,
+    //     barrierDismissible: false,
+    //     builder: (BuildContext context) {
+    //       return AlertDialog(
+    //           content: Text("타고싶은 시간 입력"),
+    //           insetPadding: const EdgeInsets.all(30),
+    //           actions: [
+    //             TextButton(
+    //                 onPressed: () {
+    //                   Navigator.of(context).pop();
+    //                 },
+    //                 child: Text("같이 탈래 신청하기")),
+    //             TextButton(
+    //                 onPressed: () {
+    //                   Navigator.of(context).pop();
+    //                 },
+    //                 child: Text("취소")),
+    //           ]);
+    //     });
   }
 
   Future _future() async {

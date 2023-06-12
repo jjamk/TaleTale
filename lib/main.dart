@@ -6,6 +6,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:get/get.dart';
 import 'before.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,6 +23,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      supportedLocales: [
+        const Locale('ko', 'KO'),
+      ],
       debugShowCheckedModeBanner: false,
       title: 'Food Sharing',
       theme: ThemeData(
