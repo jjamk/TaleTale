@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/responsive/breakpoint.dart';
 import 'package:flutter_application_1/page/app.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'signup.dart';
 import 'package:flutter/cupertino.dart';
-import 'page/repository.dart';
+
+class currentuser {
+  static String currentUserEmail = "";
+}
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);

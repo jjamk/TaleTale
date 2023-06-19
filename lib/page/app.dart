@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/page/survey.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_application_1/page/home.dart';
+import 'reserve.dart';
+import 'seat.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -22,9 +25,12 @@ class _AppState extends State<App> {
   Widget _bodyWidget() {
     switch (_currentPageIndex) {
       case 0:
+        return Reserve();
+        return MyApp1();
       case 1:
         return Home();
       case 2:
+        return Survey();
     }
     return Container();
   }

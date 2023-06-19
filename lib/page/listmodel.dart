@@ -1,13 +1,31 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class ListModel {
   ListModel({
-    required this.startTime,
-    required this.duringTime,
-    required this.seatNum,
-    required this.price,
+    this.date,
+    this.time,
+    this.arrTer,
+    this.startTer,
+    this.seatNum,
   });
 
-  String? startTime;
-  String? duringTime;
+  String? date;
+  String? time;
+  String? arrTer;
+  String? startTer;
   String? seatNum;
-  String? price;
+
+  ListModel.fromJson(dynamic json) {
+    date = json['date'];
+    time = json['time'];
+    arrTer = json['arrTer'];
+    startTer = json['startTer'];
+    seatNum = json['seatNum'];
+  }
+
+  ListModel.fromSnapShot(DocumentSnapshot<Map<String, dynamic>> snapshot)
+      : this.fromJson(snapshot.data());
+  ListModel.fromQuerySnapShot(
+      QueryDocumentSnapshot<Map<String, dynamic>> snapshot)
+      : this.fromJson(snapshot.data());
 }
