@@ -2,18 +2,22 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CLIENT_ID</key>
+	<string>862053198618-vuasbsjjfp00rfm1hqscu94fg82h45v5.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.862053198618-vuasbsjjfp00rfm1hqscu94fg82h45v5</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCRuWC4DeVgCGQuux4R7b2vqmtrzmQaFm0</string>
+	<string>AIzaSyBlTaJTRtvhf0M-Jl8VTNl0ZjnnFvrji6U</string>
 	<key>GCM_SENDER_ID</key>
-	<string>590736670484</string>
+	<string>862053198618</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.flutterApplication1</string>
+	<string>com.example.flutterApplication2</string>
 	<key>PROJECT_ID</key>
-	<string>taletale-a9e9a</string>
+	<string>taletale-f5808</string>
 	<key>STORAGE_BUCKET</key>
-	<string>taletale-a9e9a.appspot.com</string>
+	<string>taletale-f5808.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:590736670484:ios:6e6d6e68b87bd9a4020c01</string>
+	<string>1:862053198618:ios:be61a2e63c6b7b11771aa3</string>
 </dict>
 </plist>
