@@ -1,26 +1,36 @@
 {
   "project_info": {
-    "project_number": "590736670484",
-    "project_id": "taletale-a9e9a",
-    "storage_bucket": "taletale-a9e9a.appspot.com"
+    "project_number": "862053198618",
+    "project_id": "taletale-f5808",
+    "storage_bucket": "taletale-f5808.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:590736670484:android:e081a4275118536b020c01",
+        "mobilesdk_app_id": "1:862053198618:android:b070c389a083f55c771aa3",
         "android_client_info": {
-          "package_name": "com.example.flutter_application_1"
+          "package_name": "com.example.flutter_application_2"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "862053198618-9o53rerlvn7s55hoqkve12cpntki436m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyAtLwO7l-3DJCbEIGe39l9uEPrFDoAfhmE"
+          "current_key": "AIzaSyD6owjdlmx5YEk-EUjqI3m6qBDpE6Ede8k"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "862053198618-9o53rerlvn7s55hoqkve12cpntki436m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
