@@ -13,12 +13,12 @@ class Reserve extends StatefulWidget {
 }
 
 class _ReserveState extends State<Reserve> {
-  String departure = '대전복합'; // db에 저장된 출발지 불러오기
-  String destination = '청주'; // db에 저장된 도착지 불러오기
-  int selectedSeatNumber = 1; // db에 저장된 좌석번호 불러오기
+  String departure = '동서울'; // db에 저장된 출발지 불러오기
+  String destination = '이천'; // db에 저장된 도착지 불러오기
+  int selectedSeatNumber = 3; // db에 저장된 좌석번호 불러오기
   String busGrade = '우등'; // 우등 고정
-  String duration = '70'; //db에 저장된 소요시간 불러오기
-  String date = '2023년 06월 30일'; //db에 저장된 날짜 불러오기
+  String duration = '120'; //db에 저장된 소요시간 불러오기
+  String date = '2023년 06월 24일'; //db에 저장된 날짜 불러오기
   String time = '11시 30분'; // db에 저장된 시간 불러오기
   String formattedDuration = '';
   String formattedDate = '';

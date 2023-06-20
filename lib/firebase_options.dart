@@ -17,7 +17,10 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -43,39 +46,31 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAPTnfVaT4irrLaL1hqXjoJhd3Zyc7OFqo',
-    appId: '1:590736670484:web:98287631c6b1ff76020c01',
-    messagingSenderId: '590736670484',
-    projectId: 'taletale-a9e9a',
-    authDomain: 'taletale-a9e9a.firebaseapp.com',
-    storageBucket: 'taletale-a9e9a.appspot.com',
-    measurementId: 'G-S1VEE5QX40',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAtLwO7l-3DJCbEIGe39l9uEPrFDoAfhmE',
-    appId: '1:590736670484:android:e081a4275118536b020c01',
-    messagingSenderId: '590736670484',
-    projectId: 'taletale-a9e9a',
-    storageBucket: 'taletale-a9e9a.appspot.com',
+    apiKey: 'AIzaSyD6owjdlmx5YEk-EUjqI3m6qBDpE6Ede8k',
+    appId: '1:862053198618:android:b070c389a083f55c771aa3',
+    messagingSenderId: '862053198618',
+    projectId: 'taletale-f5808',
+    storageBucket: 'taletale-f5808.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCRuWC4DeVgCGQuux4R7b2vqmtrzmQaFm0',
-    appId: '1:590736670484:ios:6e6d6e68b87bd9a4020c01',
-    messagingSenderId: '590736670484',
-    projectId: 'taletale-a9e9a',
-    storageBucket: 'taletale-a9e9a.appspot.com',
-    iosBundleId: 'com.example.flutterApplication1',
+    apiKey: 'AIzaSyBlTaJTRtvhf0M-Jl8VTNl0ZjnnFvrji6U',
+    appId: '1:862053198618:ios:be61a2e63c6b7b11771aa3',
+    messagingSenderId: '862053198618',
+    projectId: 'taletale-f5808',
+    storageBucket: 'taletale-f5808.appspot.com',
+    iosClientId: '862053198618-vuasbsjjfp00rfm1hqscu94fg82h45v5.apps.googleusercontent.com',
+    iosBundleId: 'com.example.flutterApplication2',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCRuWC4DeVgCGQuux4R7b2vqmtrzmQaFm0',
-    appId: '1:590736670484:ios:6e6d6e68b87bd9a4020c01',
-    messagingSenderId: '590736670484',
-    projectId: 'taletale-a9e9a',
-    storageBucket: 'taletale-a9e9a.appspot.com',
-    iosBundleId: 'com.example.flutterApplication1',
+    apiKey: 'AIzaSyBlTaJTRtvhf0M-Jl8VTNl0ZjnnFvrji6U',
+    appId: '1:862053198618:ios:be61a2e63c6b7b11771aa3',
+    messagingSenderId: '862053198618',
+    projectId: 'taletale-f5808',
+    storageBucket: 'taletale-f5808.appspot.com',
+    iosClientId: '862053198618-vuasbsjjfp00rfm1hqscu94fg82h45v5.apps.googleusercontent.com',
+    iosBundleId: 'com.example.flutterApplication2',
   );
 }

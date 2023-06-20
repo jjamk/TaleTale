@@ -1,9 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/signin.dart';
+import 'package:flutter_application_2/signin.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import '../model/api_model.dart';
+import '../notification.dart';
 
 // 완벽히 지정된 노선에 대한 좌석 여부와 요금 데이터를 받아오는 api 엔드포인트와 접속에 필요한 헤더
 Future<ibt_info_ApiResponse> ibt_info_fetchData(String terSfr, String terSto,

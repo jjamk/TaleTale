@@ -49,7 +49,10 @@ class FlutterLocalNotification {
         iOS: DarwinNotificationDetails(badgeNumber: 1));
 
     await flutterLocalNotificationsPlugin.show(
-        0, 'Q.지금 지쳤나요?', '네', notificationDetails);
-    //0, '탈래탈래', '신청하신 배차시간이 신설되었어요. 예매하러 가볼까요?', notificationDetails);
+        0,
+        '같이탈래 배차완료!',
+        '신청하신 [동서울-이천] 6월24일 11시 30분 노선이 신설되었어요. 예매하러 가볼까요?',
+        notificationDetails);
+    ;
   }
 }

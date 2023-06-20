@@ -1,8 +1,10 @@
+import 'dart:ffi';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/notification.dart';
+import 'package:flutter_application_2/notification.dart';
 import '../signin.dart';
 import '../page/listmodel.dart';
 
@@ -26,6 +28,8 @@ class _SurveyState extends State<Survey> {
   final firestore = FirebaseFirestore.instance;
 
   void initState() {
+    FlutterLocalNotification.init();
+    FlutterLocalNotification.showNotification();
     getData();
     // TODO: implement initState
     super.initState();
@@ -45,7 +49,7 @@ class _SurveyState extends State<Survey> {
 
     collectionReference = FirebaseFirestore.instance.collection("survey");
     QuerySnapshot<Map<String, dynamic>> querySnapshot =
-        await collectionReference.get();
+        await collectionReference.orderBy("date", descending: false).get();
     for (var doc in querySnapshot.docs) {
       ListModel listModel = ListModel.fromQuerySnapShot(doc);
       datas.add(listModel);
@@ -110,7 +114,7 @@ class _SurveyState extends State<Survey> {
                                 margin: EdgeInsets.all(5),
                                 padding: EdgeInsets.all(5),
                                 child: Text(
-                                  "${datas[index].seatNum.toString()}/41",
+                                  "${datas[index].seatNum.toString()}/28",
                                   style: TextStyle(fontSize: 13),
                                 ),
                               ),
@@ -159,6 +163,30 @@ class _SurveyState extends State<Survey> {
                                                                           43,
                                                                           43)),
                                                       onPressed: () {
+                                                        CollectionReference<
+                                                                Map<String,
+                                                                    dynamic>>
+                                                            collectionReference;
+                                                        int temp;
+
+                                                        // bucket이라는 변수로 firestore의 collection인 bucket에 접근
+                                                        // bucket 콜렉션의 bucket_item 문서의 name 필드 duck2로 바꾸
+                                                        collectionReference =
+                                                            FirebaseFirestore
+                                                                .instance
+                                                                .collection(
+                                                                    "survey");
+                                                        temp = int.parse(
+                                                                datas[index]
+                                                                    .seatNum) +
+                                                            1;
+                                                        collectionReference
+                                                            .doc(
+                                                                "4Pbbx8X1SZKbzeOB8bbY")
+                                                            .update({
+                                                          "seatNum":
+                                                              '${temp.toString()}'
+                                                        });
                                                         Navigator.of(context)
                                                             .pop();
                                                       },

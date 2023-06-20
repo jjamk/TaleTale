@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/model/api_model.dart';
-import 'package:flutter_application_1/page/seat.dart';
-import 'package:flutter_application_1/signin.dart';
+import 'package:flutter_application_2/model/api_model.dart';
+import 'package:flutter_application_2/page/seat.dart';
+import 'package:flutter_application_2/signin.dart';
 import 'package:omni_datetime_picker/omni_datetime_picker.dart';
 import '../notification.dart';
 import 'search.dart';
@@ -435,7 +435,7 @@ class _HomeState extends State<Home> {
                     backgroundColor: Color.fromARGB(255, 138, 43, 43)),
                 onPressed: () {
                   main();
-                  FlutterLocalNotification.showNotification();
+                  //FlutterLocalNotification.showNotification();
                   if (startTer != '' && arrTer != '') {
                     Navigator.push(
                         context,

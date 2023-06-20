@@ -56,9 +56,9 @@ class _SearchState extends State<Search> {
     CollectionReference<Map<String, dynamic>> collectionReference;
 
     collectionReference =
-        FirebaseFirestore.instance.collection('${widget.rotId}');
+        FirebaseFirestore.instance.collection('RT201603150047214');
     QuerySnapshot<Map<String, dynamic>> querySnapshot =
-        await collectionReference.get();
+        await collectionReference.orderBy("time", descending: false).get();
 
     for (var doc in querySnapshot.docs) {
       ApiListModel listModel = ApiListModel.fromQuerySnapShot(doc);
