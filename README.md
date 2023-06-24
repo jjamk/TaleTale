@@ -4,7 +4,7 @@
 코로나로 인한 시외버스 배차시간 감축으로 인해 사용자들의 불편함을 해소하고자 제작하였습니다.
 
 
-🔗 ![파일이미지](./panel.jpg)
+🔗 ![파일이미지](./panel.png)
 
 <img src="https://img.shields.io/badge/unity-%23000000.svg?style=for-the-badge&logo=unity&logoColor=white"/></a>
 <img src="https://img.shields.io/badge/Flutter-4491e4?style=flat-square&logo=Flutter&logoColor=white"/></a>
